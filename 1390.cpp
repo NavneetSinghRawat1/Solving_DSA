@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    vector<int> nums={21,21};
+    vector<int> nums={21,4,7};
     int sum=0;
     for(int i=0;i<nums.size();i++){
         vector<int> temp;
