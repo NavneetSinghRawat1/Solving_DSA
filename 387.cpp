@@ -6,18 +6,32 @@ int firstUniqChar(string s) {
     for(char c:s){
         mpp[c]++;
     }
-    for(auto i:mpp){
-        if(i.second==1)
-        {
-            int x=s.find(i.first);
-            ans=min(x,ans);
+    for(int i=0;i<s.size();i++){
+        auto it=mpp.find(s[i]);
+        if(it->second==1){
+            return i;
         }
     }
-    if(ans==INT_MAX)return -1;
-    return ans;
-
+    return -1;
 }
+// int firstUniqChar(string s) {
+//     int ans=INT_MAX;
+//     map<char,int> mpp;
+//     for(char c:s){
+//         mpp[c]++;
+//     }
+//     for(auto i:mpp){
+//         if(i.second==1)
+//         {
+//             int x=s.find(i.first);
+//             ans=min(x,ans);
+//         }
+//     }
+//     if(ans==INT_MAX)return -1;
+//     return ans;
+
+// }
 int main() {
-    string s="aabb";
+    string s="loveleetcode";
     cout<<firstUniqChar(s);
 }
